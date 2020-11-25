@@ -1,0 +1,21 @@
+<div class="container p-5">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <h4 class="mb-3">Emails List</h4>
+            <div class="card p-3">
+                <p *ngFor="let e of emailsList"><input type="checkbox" class="m-2"value="{{e.id}}" (change)="selected($event,e)" >{{e.mailId}}</p>
+            </div>
+            <button class="btn btn-primary m-2 float-right" (click)="saveEmails()">Save Emails</button>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4 class="mb-3">Selected Emails</h4>
+            <div class="card p-3">
+                <div class="row" *ngFor="let s of selectedEmialsList">
+                    <p>{{s.mailId}}</p>
+                    <p class="ml-auto cross">&times;</p>
+                </div>
+            </div>
+            <p class="danger" *ngIf="selectedEmialsList.length > 10">You had selected more than 10 mails</p>
+        </div>
+    </div>
+</div>
