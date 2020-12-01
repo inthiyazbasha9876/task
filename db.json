@@ -87,56 +87,84 @@
       "id": 2
     },
     {
-      "mailId": "test13@gmail.com",
-      "id": 14
-    },
-    {
-      "mailId": "test14@gmail.com",
-      "id": 15
-    },
-    {
-      "mailId": "test15@gmail.com",
-      "id": 16
+      "mailId": "test2@gmail.com",
+      "id": 3
     },
     {
       "mailId": "test18@gmail.com",
       "id": 19
+    }
+  ],
+  "companyList": [
+    {
+      "companyId": 1001,
+      "companyName": "company1"
     },
     {
-      "mailId": "test16@gmail.com",
-      "id": 17
+      "companyId": 1002,
+      "companyName": "company1"
     },
     {
-      "mailId": "test17@gmail.com",
-      "id": 18
+      "companyId": 1003,
+      "companyName": "company1"
     },
     {
-      "mailId": "test9@gmail.com",
-      "id": 10
+      "companyId": 1004,
+      "companyName": "company1"
     },
     {
-      "mailId": "test12@gmail.com",
-      "id": 13
+      "companyId": 1005,
+      "companyName": "company1"
+    }
+  ],
+  "companyCodes": [
+    {
+      "companyId": 1001,
+      "codes": [
+        {
+          "codeId": "1001-101",
+          "codeName": "jahs12-12nksd-sdsd"
+        },
+        {
+          "codeId": "1001-102",
+          "codeName": "jahs12-12nksd-sdsd"
+        },
+        {
+          "codeId": "1001-103",
+          "codeName": "jahs12-12nksd-sdsd"
+        },
+        {
+          "codeId": "1001-104",
+          "codeName": "jahs12-12nksd-sdsd"
+        }
+      ]
     },
     {
-      "mailId": "test11@gmail.com",
-      "id": 12
-    },
+      "companyId": 1002,
+      "codes": [
+        {
+          "codeId": "1002-101",
+          "codeName": "jahs12-12nksd-sdsd"
+        },
+        {
+          "codeId": "1002-102",
+          "codeName": "jahs12-12nksd-sdsd"
+        },
+        {
+          "codeId": "1002-103",
+          "codeName": "jahs12-12nksd-sdsd"
+        }
+      ]
+    }
+  ],
+  "pluralTask": [
     {
-      "mailId": "test10@gmail.com",
-      "id": 11
-    },
-    {
-      "mailId": "test6@gmail.com",
-      "id": 7
-    },
-    {
-      "mailId": "test7@gmail.com",
-      "id": 8
-    },
-    {
-      "mailId": "test8@gmail.com",
-      "id": 9
+      "firstName": "basha",
+      "lastName": "s",
+      "dateOfBirth": "2020-12-03",
+      "mobile": "9966885522",
+      "email": "basha.s@gmail.com",
+      "id": 1
     }
   ]
 }

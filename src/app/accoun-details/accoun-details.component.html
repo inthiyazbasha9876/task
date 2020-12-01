@@ -1,0 +1,41 @@
+<div class="card p-3 m-5">
+    <h4 class="text-center font-theme mb-5">LEDGER</h4>
+    <form [formGroup]="transactionForm">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <label class="label-theme font-theme">Account Balance</label>
+                <p class="text-theme font-theme">RS. {{accountDetails.accountBalance}}</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <p class="font-theme">Amount</p>
+                <input class="form-control" placeholder="Ex: 100" formControlName="spendMoney">
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <p class="font-theme">Reason</p>
+                <input class="form-control" placeholder="Ex: Spend for dinner @ Hotel" formControlName="reason">
+                <div class="d-flex">
+                    <button class="btn btn-skin btn-theme" [disabled]="transactionForm.invalid" (click)="transaction('debit')">Debit</button>
+                    <button class="btn btn-skin btn-theme" [disabled]="transactionForm.invalid" (click)="transaction('credit')">Credit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <button class="btn btn-skin-merged btn-theme" (click)="allTranscations()">All</button>
+        <button class="btn btn-skin-merged btn-theme" (click)="debitTranactions()">Spends</button>
+        <button class="btn btn-skin-merged btn-theme" (click)="cerditTranactions()">Received</button>
+    </div>
+    <div class="card p-3">
+        <div class="row">
+            <div class="card p-2 m-2 col-md-2 col-sm-12" *ngFor="let transaction of trasactionsArray">
+                <p class="font-theme text-theme">{{transaction.reason}}</p>
+                <p class="font-theme">Balance: Rs.{{transaction.balanceAmount}}</p>
+                <div class="row">
+                    <p class="font-theme">{{transaction.transactionDate|date :'ddMMM yy'}}</p>
+                    <p class="font-theme ml-auto">Rs. <span *ngIf="transaction.transactionMode=='credit'">+</span><span *ngIf="transaction.transactionMode=='debit'">-</span>{{transaction.amount}}</p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

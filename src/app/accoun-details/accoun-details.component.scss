@@ -1,0 +1,46 @@
+.label-theme{
+    font-size:16px ;
+}
+
+.text-theme{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.font-theme{
+    font-style: italic;
+}
+
+.card{
+    border:2px solid rgba(0, 0, 0, 0.486)
+}
+.btn-skin{
+    margin:15px 5px;
+    padding: 5px 58px;
+}
+
+.btn-skin-merged{
+    padding: 5px 45px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.btn-skin-merged:focus,.btn-skin-merged:active{
+    background: black;
+    color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-theme{
+    background-color: rgba(172, 169, 169, 0.589);
+    color: black;
+}
+
+.form-control:active,.form-control:focus{
+    outline: none;
+    box-shadow: none;
+    border-color: black;
+}
+.form-control{
+    padding: 2px 10px;
+}

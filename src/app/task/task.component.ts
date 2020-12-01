@@ -8,12 +8,16 @@ import { ServiceService } from '../service.service';
 })
 export class TaskComponent implements OnInit {
 
+  allselect=false
   emailsList
   selectedMailsArray=[]
   selectedEmialsList
+  companyNameList:any
+  companyCodesList:any
   constructor(private service:ServiceService) { 
     this.getdata()
     this.getSelectedData()
+    this.getCompanyName()
   }
 
   ngOnInit() {
@@ -30,7 +34,7 @@ export class TaskComponent implements OnInit {
   getSelectedData(){
     this.service.selectedEmailsList().subscribe(res=>{
       console.log(res);
-      this.selectedEmialsList=res
+      this.selectedEmialsList=res 
       
     })
   }
@@ -57,5 +61,32 @@ export class TaskComponent implements OnInit {
       })
     }
    
+  }
+
+  selectall(){
+    if(this.allselect==false)
+    this.allselect=true
+    else
+    this.allselect=false
+  }
+
+  getCompanyName(){
+    this.service.companyList().subscribe(res=>{
+      console.log(res);
+      this.companyNameList=res
+    })
+  }
+
+  getCompanyCodes(event){
+      console.log(event.target.value);
+      this.companyCodesList=null
+      this.service.companyCodeList(event.target.value).subscribe(res=>{
+        console.log(res);
+        let data=res
+        // if(data.length>0){
+
+        // }
+        this.companyCodesList=data[0].codes
+      })
   }
 }
