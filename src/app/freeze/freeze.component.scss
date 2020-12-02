@@ -1,1 +1,32 @@
- 
+ .form-control{
+     margin: 5px 0px;
+ }
+
+ .btn-skin{
+     padding: 10px 50px;
+     margin: 10px 0px;
+ }
+
+ .card{
+     border-color:rgba(85, 82, 82, 0.438);
+ }
+
+ .btn-gray-theme{
+     background-color: rgba(128, 128, 128, 0.521);
+     font-weight: bold;
+ }
+
+ .searchbox{
+     position: relative;
+ }
+
+ .btn-position{
+     position: absolute;
+     top:0;
+     right: 0;
+ }
+
+ .freeze{
+     position: fixed;;
+     z-index: 10000;
+ }

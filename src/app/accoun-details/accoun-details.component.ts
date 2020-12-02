@@ -34,7 +34,6 @@ export class AccounDetailsComponent implements OnInit {
   }
 
   transaction(mode){
-    console.log(this.transactionForm);
     let transactionObj={
       amount:this.transactionForm.value.spendMoney,
       reason:this.transactionForm.value.reason,
@@ -44,8 +43,6 @@ export class AccounDetailsComponent implements OnInit {
     }
     if(mode=='debit'){
       if(this.accountDetails.accountBalance == 0){
-        console.log("you account is 0 bal");
-        
       }else{
         this.accountDetails.accountBalance -=Number(this.transactionForm.value.spendMoney)
         transactionObj.balanceAmount=this.accountDetails.accountBalance
