@@ -16,26 +16,25 @@
                         <input type="radio" name="gender" value="female" formControlName="gender">Female
                     </div>
                     <input type="time" formControlName="freezeTime" class="form-control" step="1">
-                    <button class="btn btn-skin btn-gray-theme" [disabled]="detailsForm.invalid"
-                        (click)="savedData()">Save</button>
+                    <button class="btn btn-skin btn-gray-theme" [disabled]="detailsForm.invalid" (click)="savedData()">Save</button>
                 </form>
             </div>
         </div>
         <div class="col-md-9 col-sm-12 p-2">
             <div class="searchbox">
-                <input class="form-control" placeholder="search by name" [(ngModel)]="searchItem"
-                    (change)="search($event.target.value)">
+                <input class="form-control" placeholder="search by name" [(ngModel)]="searchItem" (change)="search($event.target.value)">
                 <button class="btn btn-gray-theme btn-position"><i class="fa fa-search" aria-hidden="true"
                         (click)="search(searchItem)"></i></button>
             </div>
             <p>{{timeLeft}}</p>
             <div class="row">
-                <div class="card p-2 col-sm-3 m-2" *ngFor="let data of cardDetails" [class.freeze]="freezetask">
+                <div class="card p-2 col-sm-3 m-2" *ngFor="let data of cardDetails | search:searchItem" [class.freeze]="freezetask">
                     <p>{{data.name}}</p>
                     <p>Freeze Time-{{data.freezeTimeMinutes}}:{{data.freezeTimeSeconds}}</p>
                 </div>
             </div>
 
         </div>
+
     </div>
 </div>

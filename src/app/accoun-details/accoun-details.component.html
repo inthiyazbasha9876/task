@@ -9,10 +9,16 @@
             <div class="col-md-3 col-sm-12">
                 <p class="font-theme">Amount</p>
                 <input class="form-control" placeholder="Ex: 100" formControlName="spendMoney">
+                <div *ngIf="transactionForm.controls.spendMoney.errors && transactionForm.controls.spendMoney.touched">
+                    <p *ngIf="transactionForm.controls.spendMoney.errors.required" class="text-danger">Money is required</p>
+                </div>
             </div>
             <div class="col-md-3 col-sm-12">
                 <p class="font-theme">Reason</p>
                 <input class="form-control" placeholder="Ex: Spend for dinner @ Hotel" formControlName="reason">
+                <div *ngIf="transactionForm.controls.reason.errors && transactionForm.controls.reason.touched">
+                    <p *ngIf="transactionForm.controls.reason.errors.required" class="text-danger">reason is required</p>
+                </div>
                 <div class="d-flex">
                     <button class="btn btn-skin btn-theme" [disabled]="transactionForm.invalid" (click)="transaction('debit')">Debit</button>
                     <button class="btn btn-skin btn-theme" [disabled]="transactionForm.invalid" (click)="transaction('credit')">Credit</button>
@@ -34,7 +40,7 @@
                     <p class="font-theme">{{transaction.transactionDate|date :'ddMMM yy'}}</p>
                     <p class="font-theme ml-auto">Rs. <span *ngIf="transaction.transactionMode=='credit'">+</span><span *ngIf="transaction.transactionMode=='debit'">-</span>{{transaction.amount}}</p>
                 </div>
-               
+
             </div>
         </div>
     </div>

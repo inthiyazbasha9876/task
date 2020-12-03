@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "apptask"
+    }
+  },
+  "defaultProject": "apptask",
+  "cli": {
+    "analytics": "27aaefbd-4bde-494d-86a9-324b4230ad3c"
+  }
 }

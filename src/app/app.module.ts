@@ -9,13 +9,16 @@ import { AccounDetailsComponent } from './accoun-details/accoun-details.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PluraltaskComponent } from './pluraltask/pluraltask.component';
 import { FreezeComponent } from './freeze/freeze.component';
+import { SearchPipe } from './search.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
     AccounDetailsComponent,
     PluraltaskComponent,
-    FreezeComponent
+    FreezeComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
