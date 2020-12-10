@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PluraltaskComponent } from './pluraltask/pluraltask.component';
 import { FreezeComponent } from './freeze/freeze.component';
 import { SearchPipe } from './search.pipe';
+import { TimerPipe } from './timer.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchPipe } from './search.pipe';
     AccounDetailsComponent,
     PluraltaskComponent,
     FreezeComponent,
-    SearchPipe
+    SearchPipe,
+    TimerPipe
   ],
   imports: [
     BrowserModule,

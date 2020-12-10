@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-freeze',
   templateUrl: './freeze.component.html',
@@ -15,50 +16,46 @@ export class FreezeComponent implements OnInit {
   })
 
   cardDetails = [];
+  timeIntervalArray = []
   dummyData = [];
   freezetask = false
   searchItem: any
   interval
   timeLeft: any
+  tick = 1000
   constructor() { }
 
   ngOnInit() {
-    
   }
 
   savedData() {
     console.log(this.detailsForm.value);
-    this.cardDetails.push(this.detailsForm.value)
-    console.log(this.cardDetails);
-    this.dummyData = this.cardDetails
-  }
-
-  search(event) {
-    if (event) {
-      this.cardDetails = this.cardDetails.filter(data => data.name == event)
-      if (this.cardDetails.length > 0) {
-        this.timeLeft = Number(this.cardDetails[0].freezeTimeMinutes) + Number(this.cardDetails[0].freezeTimeMinutes) * 60 + Number(this.cardDetails[0].freezeTimeSeconds)
-        this.freezetask = true
-        this.startTimer()
-      }
-    } else {
-      this.cardDetails = this.dummyData
+    let obj = {
+      name: this.detailsForm.value.name,
+      gender: this.detailsForm.value.gender,
+      freezeTime: null,
+      function: null
     }
-  }
-
-  startTimer() {
-    this.interval = setInterval(() => {
-      if (this.timeLeft > 0) {
-        this.timeLeft--;
-      } else {
-        clearInterval(this.interval);
-        this.freezetask = false
-        this.timeLeft = null
-        return;
+    obj.freezeTime = this.seconds(this.detailsForm.value.freezeTime)
+    obj.function = setInterval(()=>{
+      if(obj.freezeTime>0){
+        --obj.freezeTime
       }
-    }, 1000);
-    console.log(this.interval);
+    },1000)
+    this.cardDetails.push(obj)
   }
 
 
+  seconds(e) {
+    var a = e.split(':');
+    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+    return seconds;
+  }
+
+
+  // this.countDown = timer(0, this.tick).subscribe(() => {
+  //   if (obj.freezeTime > 0) {
+  //     --obj.freezeTime;
+  //   }
+  // });
 }

@@ -19,7 +19,7 @@
                 <div *ngIf="transactionForm.controls.reason.errors && transactionForm.controls.reason.touched">
                     <p *ngIf="transactionForm.controls.reason.errors.required" class="text-danger">reason is required</p>
                 </div>
-                <div class="d-flex">
+                <div class="d-lg-flex">
                     <button class="btn btn-skin btn-theme" [disabled]="transactionForm.invalid" (click)="transaction('debit')">Debit</button>
                     <button class="btn btn-skin btn-theme" [disabled]="transactionForm.invalid" (click)="transaction('credit')">Credit</button>
                 </div>
