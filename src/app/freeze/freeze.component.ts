@@ -22,7 +22,6 @@ export class FreezeComponent implements OnInit {
   searchItem: any
   interval
   timeLeft: any
-  tick = 1000
   constructor() { }
 
   ngOnInit() {
@@ -40,6 +39,8 @@ export class FreezeComponent implements OnInit {
     obj.function = setInterval(()=>{
       if(obj.freezeTime>0){
         --obj.freezeTime
+      }else{
+        clearInterval(obj.function)
       }
     },1000)
     this.cardDetails.push(obj)
@@ -47,8 +48,8 @@ export class FreezeComponent implements OnInit {
 
 
   seconds(e) {
-    var a = e.split(':');
-    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+    let a = e.split(':');
+    let seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
     return seconds;
   }
 
