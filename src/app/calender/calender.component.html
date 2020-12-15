@@ -1,0 +1,27 @@
+<div class="row">
+    <button class="btn btn-secondary" (click)="getWeekDates(today)">Week Days</button>
+    <button class="btn btn-secondary" (click)="getMonthDates(today)">Month Days</button>
+</div>
+
+<i class="fa fa-angle-double-left m-2" style="font-size:34px" (click)="previous()"></i>
+<i class="fa fa-angle-double-right m-2" style="font-size:34px" (click)="next()"></i>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <th>Dates/Projects</th>
+            <th *ngFor="let date of dates" class="tableheads">
+                {{date|date:'dd MMM yyyy'}}
+                <p>{{date|date:'EEEE'}}</p>
+            </th>
+           
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of project">
+                <td>{{project.projectName}}</td>
+                
+
+                <td *ngFor="let date of dates"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -11,6 +11,7 @@ import { PluraltaskComponent } from './pluraltask/pluraltask.component';
 import { FreezeComponent } from './freeze/freeze.component';
 import { SearchPipe } from './search.pipe';
 import { TimerPipe } from './timer.pipe';
+import { CalenderComponent } from './calender/calender.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TimerPipe } from './timer.pipe';
     PluraltaskComponent,
     FreezeComponent,
     SearchPipe,
-    TimerPipe
+    TimerPipe,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,
