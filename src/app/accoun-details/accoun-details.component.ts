@@ -35,7 +35,7 @@ export class AccounDetailsComponent implements OnInit {
   ngOnInit() {
     subject.subscribe({
       next: (v) => console.log(`observerA: ${v}`)
-    }); 
+    });
   }
 
   transaction(mode) {
@@ -58,7 +58,7 @@ export class AccounDetailsComponent implements OnInit {
       this.accountDetails.allTarnsactions.push(transactionObj)
     }
   }
-  
+
   allTranscations() {
     this.trasactionsArray = []
     this.trasactionsArray = this.accountDetails.allTarnsactions

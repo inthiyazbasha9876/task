@@ -8,7 +8,7 @@ import { TaskComponent } from './task/task.component';
 
 
 const routes: Routes = [
-  {path:'',component:CalenderComponent}
+  {path:'',component:AccounDetailsComponent}
 ];
 
 @NgModule({
