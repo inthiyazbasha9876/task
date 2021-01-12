@@ -1,0 +1,16 @@
+<div class="row">
+    <input type="file" (change)="fileUploaded($event)">
+    <button class="btn btn-secondary ml-auto" (click)="generatecsv(finalData)">Generate</button>
+</div>
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th *ngFor="let header of headerArray">{{header}} <input type="checkbox" (change)="checkeddata($event,header)"></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of finalData">
+                <td *ngFor="let header of headerArray">{{data[header]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

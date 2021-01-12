@@ -12,6 +12,7 @@ import { FreezeComponent } from './freeze/freeze.component';
 import { SearchPipe } from './search.pipe';
 import { TimerPipe } from './timer.pipe';
 import { CalenderComponent } from './calender/calender.component';
+import { CsvreaderComponent } from './csvreader/csvreader.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CalenderComponent } from './calender/calender.component';
     FreezeComponent,
     SearchPipe,
     TimerPipe,
-    CalenderComponent
+    CalenderComponent,
+    CsvreaderComponent
   ],
   imports: [
     BrowserModule,
